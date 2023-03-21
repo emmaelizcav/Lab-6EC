@@ -21,6 +21,17 @@ encoded password string
     return c_password
 
 
+# Added decode function by Julia.
+def decode(password):
+	global decoded_password
+	# Makes decoded password a string and subtracts 3 from each digit.
+	decoded_password = ''
+	for digit in c_password:
+		digit = str((int(digit) - 3))
+		decoded_password += digit
+	return decoded_password
+
+
 # Defines main function
 def main():
     # Variable to run the while loop while the encoder is running
@@ -43,7 +54,7 @@ def main():
         # Will decode password if user enters 2 and returns encoded and 
 original password
         if option == 2:
-            print('The encoded password is , and the original password ')
+            print('The encoded password is ', c_password, 'and the original password is ', decoded_password)
             print('')
         # Ends program
         if option == 3:
